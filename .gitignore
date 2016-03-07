@@ -1,0 +1,9 @@
+.vs/*
+packages/*
+UIPlatform/build/*
+UIPlatform/bin/*
+UIPlatform/Content/*
+UIPlatform/node_modules/*
+UIPlatform/obj/*
+UIPlatform/Properties/*
+UIPlatform/Scripts/*

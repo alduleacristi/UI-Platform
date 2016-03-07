@@ -1,0 +1,15 @@
+﻿header{
+    height: 100px;
+    background-color: red;
+}
+footer{
+    height: 100px;
+    width: 99%;
+    background-color: yellow;
+    position:absolute;
+    bottom:0;
+}
+#map{
+   // background-color:blue;
+    height: 300px;
+}
