@@ -66,10 +66,34 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ui-grid.css" />
+    <Content Include="Content\ui-grid.min.css" />
+    <Content Include="Content\ui-grid.svg" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\jquery-2.2.1.js" />
+    <Content Include="Scripts\jquery-2.2.1.min.js" />
+    <Content Include="Scripts\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.min.js" />
+    <Content Include="src\resources\img\big-data.jpg" />
+    <Content Include="src\resources\templates\Home.html" />
+    <Content Include="src\resources\templates\Turism.html" />
+    <Content Include="src\scripts\Controllers\HomeController.js" />
+    <Content Include="src\scripts\Controllers\TurismController.js" />
+    <Content Include="src\scripts\lib\angular-resource.min.js" />
     <Content Include="src\scripts\lib\angular.min.js.map" />
+    <Content Include="Scripts\jquery-2.2.1.min.map" />
+    <Content Include="src\scripts\lib\crumble.js" />
+    <Content Include="src\scripts\lib\jquery-2.2.1.min.map" />
+    <Content Include="Content\ui-grid.woff" />
+    <Content Include="Content\ui-grid.ttf" />
+    <Content Include="Content\ui-grid.eot" />
+    <Content Include="src\style\lib\ui-grid.min.css" />
+    <Content Include="Scripts\angular-resource.min.js.map" />
+    <Content Include="src\scripts\lib\angular-resource.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -100,8 +124,10 @@
     <Content Include="src\scripts\Controllers\GoogleMapsController.js" />
     <Content Include="src\scripts\lib\angular.min.js" />
     <Content Include="src\scripts\lib\angular-leaflet-directive.min.js" />
+    <Content Include="src\scripts\lib\jquery-2.2.1.min.js" />
     <Content Include="src\scripts\lib\leaflet-0.7.3.min.js" />
     <Content Include="src\scripts\lib\ui-bootstrap.min.js" />
+    <Content Include="src\scripts\lib\ui-grid.min.js" />
     <Content Include="src\scripts\MainApp.js" />
     <Content Include="src\style\bootstrap.min.css" />
     <Content Include="src\style\custom.css" />

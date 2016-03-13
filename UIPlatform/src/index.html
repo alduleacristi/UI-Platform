@@ -10,17 +10,25 @@
 
     <title>UI Platform</title>
 
+    <script src="scripts/lib/jquery-2.2.1.min.js"></script>
     <script src="scripts/lib/angular.min.js"></script>
     <script src="scripts/lib/angular-route.min.js"></script>
+    <script src="scripts/lib/ui-grid.min.js"></script>
+    <script src="scripts/lib/crumble.js"></script>
+    <script src="scripts/lib/angular-resource.min.js"></script>
 
     <script src="scripts/MainApp.js"></script>
+    <script src="scripts/Controllers/TurismController.js"></script>
+    <script src="scripts/Controllers/HomeController.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="style/bootstrap.min.css" rel="stylesheet">
+    <link href="style/lib/ui-grid.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="style/custom.css" rel="stylesheet">
     <link href="style/flexslider.css" rel="stylesheet">
+    <link href="style/main.css" rel="stylesheet">
 
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
@@ -48,21 +56,28 @@
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
                     </span>
-                    App<span class="title">Bay</span>
+                    Big<span class="title">Data</span>
                 </a>
             </div>
             <div class="collapse navbar-collapse appiNav">
                 <ul class="nav navbar-nav">
-                    <li><a href="#featureWrap">Features</a></li>
-                    <li><a href="#productWrap">The App</a></li>
-                    <li><a href="#pricingWrap">Pricing</a></li>
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#/turism">Turism</a></li>
+                    <li><a href="#/platform">Platforma</a></li>
                     <li><a href="#testimonialsWrap">Testimonials</a></li>
                     <li><a href="#contactWrap">Contact Us</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
     </div>
-    <div ng-view></div>
+    <div style="margin-top: 100px;">
+        <ol class="breadcrumb">
+            <li ng-repeat="bc in crumble.trail">
+                <a ng-href="#{{bc.path}}">{{bc.label}}</a>
+            </li>
+        </ol>
+        <div ng-view></div>
+    </div>
     <footer>
         <div class="container">
             <div class="row">

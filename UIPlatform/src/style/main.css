@@ -1,15 +1,23 @@
-﻿header{
-    height: 100px;
-    background-color: red;
-}
-footer{
-    height: 100px;
-    width: 99%;
-    background-color: yellow;
-    position:absolute;
-    bottom:0;
-}
-#map{
-   // background-color:blue;
+﻿#map{
     height: 300px;
+}
+.left-nav{
+    float: left;
+    background-color: red;
+    width: 100px;
+    float:left;
+    height: 500px;
+}
+.viewContent{
+
+}
+.nav>li>a{
+    border-color: #428bca;
+    color: #428bca !important;
+}
+.left-navbar{
+    float: left !important;
+}
+#cityGrid{
+    height: 350px;
 }

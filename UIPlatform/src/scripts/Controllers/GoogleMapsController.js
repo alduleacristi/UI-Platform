@@ -1,5 +1,4 @@
-﻿var app = angular.module('mainApp', []);
-app.controller("GoogleMapsController", ["$scope", function ($scope) {
+﻿app.controller("GoogleMapsController", ["$scope", function ($scope) {
     angular.extend($scope, {
         defaults: {
             scrollWheelZoom: false
