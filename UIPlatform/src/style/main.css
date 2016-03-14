@@ -21,3 +21,6 @@
 #cityGrid{
     height: 350px;
 }
+.angular-google-map-container { 
+    height: 400px; 
+}

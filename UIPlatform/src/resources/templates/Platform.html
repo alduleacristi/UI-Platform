@@ -1,0 +1,29 @@
+﻿<div>
+    <script type="text/ng-template" id="group-template.html">
+        <div class="panel {{panelClass || 'panel-default'}}">
+            <div class="panel-heading">
+                <h4 class="panel-title" style="color:#fa39c3">
+                    <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
+                        <span ng-class="{'text-muted': isDisabled}">{{heading}}</span>
+                    </a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" uib-collapse="!isOpen">
+                <div class="panel-body" style="text-align: right" ng-transclude></div>
+            </div>
+        </div>
+    </script>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <uib-accordion-group close-others="oneAtATime">
+                <uib-accordion-group heading="Custom template" template-url="group-template.html">
+                    Hello
+                </uib-accordion-group>
+            </uib-accordion-group>
+        </div>
+        <div class="col-lg-9">
+            <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+        </div>
+    </div>
+</div>
