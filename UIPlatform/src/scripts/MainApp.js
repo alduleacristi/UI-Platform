@@ -1,4 +1,4 @@
-﻿var app = angular.module('mainApp', ['ngRoute', 'ngResource', 'ui.grid', 'crumble', 'uiGmapgoogle-maps']);
+﻿var app = angular.module('mainApp', ['ngRoute', 'ngResource', 'ui.grid', 'crumble', 'uiGmapgoogle-maps', 'ui.bootstrap']);
 
 app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
     $routeProvider

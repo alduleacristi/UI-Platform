@@ -16,14 +16,31 @@
 
     <div class="row">
         <div class="col-lg-2">
-            <uib-accordion-group close-others="oneAtATime">
-                <uib-accordion-group heading="Custom template" template-url="group-template.html">
+            <uib-accordion close-others="oneAtATime">
+                <uib-accordion-group heading="Platform status" template-url="group-template.html">
                     Hello
                 </uib-accordion-group>
-            </uib-accordion-group>
+                <uib-accordion-group heading="Content administration" template-url="group-template.html">
+                    Hello
+                </uib-accordion-group>
+                <uib-accordion-group heading="Jobs" template-url="group-template.html">
+                    Hello
+                </uib-accordion-group>
+             </uib-accordion>
         </div>
         <div class="col-lg-9">
-            <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+            <!--<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>-->
+            <!--<button ng-click="startDrawing()">Draw Polygon</button>
+
+            <ui-gmap-google-map center="map.center" zoom="map.zoom" draw="map.draw">
+                <ui-gmap-polygon ng-repeat="polygon in map.polygons" path="polygon.path" fill="polygon.fill">
+                </ui-gmap-polygon>
+            </ui-gmap-google-map>-->
+            <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds" events="map.events">
+                <ui-gmap-polygon static="true" ng-repeat="p in polygons track by p.id" path="p.path" stroke="p.stroke" visible="p.visible"
+                                 geodesic="p.geodesic" fill="p.fill" fit="false" editable="p.editable" draggable="p.draggable"></ui-gmap-polygon>
+                <ui-gmap-marker ng-repeat="m in markers" coords="m.coords" icon="m.icon" idkey="m.id" options="markerOptions" events="markerEvents"></ui-gmap-marker>
+            </ui-gmap-google-map>
         </div>
     </div>
 </div>

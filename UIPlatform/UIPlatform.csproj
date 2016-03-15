@@ -71,6 +71,8 @@
     <Content Include="Content\ui-grid.svg" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-google-maps-street-view.js" />
     <Content Include="Scripts\angular-google-maps-street-view.min.js" />
     <Content Include="Scripts\angular-google-maps.js" />
@@ -87,10 +89,12 @@
     <Content Include="src\resources\img\big-data.jpg" />
     <Content Include="src\resources\templates\Home.html" />
     <Content Include="src\resources\templates\Platform.html" />
+    <Content Include="src\resources\templates\PlatformMenu.html" />
     <Content Include="src\resources\templates\Turism.html" />
     <Content Include="src\scripts\Controllers\HomeController.js" />
     <Content Include="src\scripts\Controllers\PlatformController.js" />
     <Content Include="src\scripts\Controllers\TurismController.js" />
+    <Content Include="src\scripts\lib\angular-animate.min.js" />
     <Content Include="src\scripts\lib\angular-google-maps.min.js" />
     <Content Include="src\scripts\lib\angular-resource.min.js" />
     <Content Include="src\scripts\lib\angular-simple-logger.min.js" />
@@ -102,9 +106,12 @@
     <Content Include="Content\ui-grid.ttf" />
     <Content Include="Content\ui-grid.eot" />
     <Content Include="src\scripts\lib\lodash.min.js" />
+    <Content Include="src\scripts\lib\ui-bootstrap-tpls.min.js" />
     <Content Include="src\style\lib\ui-grid.min.css" />
     <Content Include="Scripts\angular-resource.min.js.map" />
     <Content Include="src\scripts\lib\angular-resource.min.js.map" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="src\scripts\lib\angular-animate.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
