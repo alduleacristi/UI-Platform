@@ -1,14 +1,9 @@
-﻿app.controller("TurismController", ["$scope","$resource", function ($scope, $resource) {
-    console.info($resource)
+﻿app.controller("TurismController", function ($scope, Region) {
     $scope.$on('$viewContentLoaded', function () {
-        console.info("In initialize...");
-        console.info($resource)
-        /*var city = $resource('http://192.168.209.135:8082/platform-server/api/city', {}, {
-            query: { method: 'GET', isArray:true}
+        Region.getList().then(function (result) {
+            $scope.items = result.plain()
+            console.info($scope.items)
         });
-        city.get(function (citys) {
-            console.info(citys)
-        });*/
     });
 
     $scope.myData = [
@@ -35,4 +30,4 @@
     $scope.grid = {
         data: $scope.myData
     };
-}]);
+});

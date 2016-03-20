@@ -84,8 +84,12 @@
     <Content Include="Scripts\jquery-2.2.1.min.js" />
     <Content Include="Scripts\lodash.js" />
     <Content Include="Scripts\lodash.min.js" />
+    <Content Include="Scripts\restangular.js" />
+    <Content Include="Scripts\restangular.min.js" />
     <Content Include="Scripts\ui-grid.js" />
     <Content Include="Scripts\ui-grid.min.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js" />
     <Content Include="src\resources\img\big-data.jpg" />
     <Content Include="src\resources\templates\Home.html" />
     <Content Include="src\resources\templates\Platform.html" />
@@ -106,12 +110,18 @@
     <Content Include="Content\ui-grid.ttf" />
     <Content Include="Content\ui-grid.eot" />
     <Content Include="src\scripts\lib\lodash.min.js" />
+    <Content Include="src\scripts\lib\restangular.min.js" />
     <Content Include="src\scripts\lib\ui-bootstrap-tpls.min.js" />
+    <Content Include="src\scripts\lib\underscore.min.js" />
+    <Content Include="src\scripts\Modules\RestModule.js" />
     <Content Include="src\style\lib\ui-grid.min.css" />
     <Content Include="Scripts\angular-resource.min.js.map" />
     <Content Include="src\scripts\lib\angular-resource.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="src\scripts\lib\angular-animate.min.js.map" />
+    <Content Include="Scripts\underscore.min.map" />
+    <Content Include="src\scripts\lib\underscore.min.map" />
+    <Content Include="src\style\lib\ui-grid.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -146,7 +156,7 @@
     <Content Include="src\scripts\lib\leaflet-0.7.3.min.js" />
     <Content Include="src\scripts\lib\ui-bootstrap.min.js" />
     <Content Include="src\scripts\lib\ui-grid.min.js" />
-    <Content Include="src\scripts\MainApp.js" />
+    <Content Include="src\scripts\Modules\MainModule.js" />
     <Content Include="src\style\bootstrap.min.css" />
     <Content Include="src\style\custom.css" />
     <Content Include="src\style\flexslider.css" />
