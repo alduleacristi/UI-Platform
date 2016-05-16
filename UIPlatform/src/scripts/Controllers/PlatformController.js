@@ -1,36 +1,4 @@
-﻿app.controller("PlatformController", ["$scope", "$rootScope", function ($scope, $rootScope) {
-    /*$scope.$on('$routeChangeSuccess', function () {
-        console.info("gettting geolocation...");
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                $scope.curr_coord = {
-                    latitude: position.coords.latitude,
-                    longitude: position.coords.longitude
-                }
-            });
-        } else {
-            console.info("Geolocation is not available...")
-        }
-    });*/
-
-    //$scope.map = { center: { latitude: 45.65288, longitude: 25.61184 }, zoom: 11 };
-    /*$scope.map = {
-        center: {
-            latitude: -33.8,
-            longitude: 151.2
-        },
-        zoom: 11,
-        draw: null,
-        polygons: []
-    };
-
-    $scope.startDrawing = function () {
-        $scope.map.draw().then(function (path) {
-            $scope.map.polygons.push({ path: path, fill: "#ff0000" });
-        });
-    };*/
-    $scope.points = 
-
+﻿app.controller("PlatformController", function ($scope, $rootScope, Region) {
     $scope.map = {
         center: {
             latitude: 45.65288, longitude: 25.61184
@@ -54,53 +22,18 @@
                     longitude: lon
                 };
                 $scope.polygons[0].path.push(polygonPoint);
-                $scope.markers.push(marker);
+                $scope.markers.push(marker)
+                $scope.region.coords.points.push(polygonPoint);
                 $scope.$apply();
             }
         }
     }
-    /*$scope.polygons = [
-        {
-            id: 1,
-            path: [
-                {
-                    latitude: 50,
-                    longitude: -80
-                },
-                {
-                    latitude: 30,
-                    longitude: -120
-                },
-                {
-                    latitude: 20,
-                    longitude: -95
-                }
-            ],
-            stroke: {
-                color: '#6060FB',
-                weight: 3
-            },
-            editable: true,
-            draggable: true,
-            geodesic: false,
-            visible: true,
-            fill: {
-                color: '#ff0000',
-                opacity: 0.8
-            }
-        }
-    ];*/
+ 
     $scope.polygons = [{
         id: 1,
         path: []
     }];
-    /*$scope.markers = [{
-        id: "Id 1",
-        coords: {
-            latitude: 50,
-            longitude: -80
-        },
-    }];*/
+   
     $scope.markers = [];
     $scope.markerOptions = { draggable: true }
     $scope.markerEvents = {
@@ -114,4 +47,46 @@
             $scope.$apply();
         }
     }
-}]);
+
+    $scope.region = {
+        name: "",
+        coords: {
+            points: []
+        }
+    };
+    $scope.alerts = [];
+
+    $scope.saveRegion = function () {
+        console.info("Save region was called...");
+
+        if ($scope.region.name == "") {
+            /*if ($scope.alerts.filter(function(e){ return e.id == "NameIsEmpty"})){
+               $scope.alerts.push(nmeIsEmptyAlert);
+            }*/
+            $scope.alerts.push(nmeIsEmptyAlert);
+            return;
+        };
+
+        console.info("Before post...")
+        /*Region.post("region", $scope.region).then(function (result) {
+            $scope.grid.data = result.plain()
+            //$scope.$apply();
+            console.info($scope.regions)
+        });*/
+        $scope.region.id = null;
+        console.info("Region: ", $scope.region);
+        Region.post($scope.region).then(function (result) {
+            //$scope.grid.data = result.plain()
+            //$scope.$apply();
+            console.info(result.plain())
+        });
+    };
+
+    $scope.closeAlert = function (index) {
+        $scope.alerts.splice(index, 1);
+    };
+
+    var nmeIsEmptyAlert = {
+        type: 'danger', msg: "You must give a name to the region.", id:"NameIsEmpty"
+    };
+});

@@ -1,4 +1,4 @@
-﻿var app = angular.module('mainApp', ['ngRoute', 'ngResource', 'ui.grid', 'crumble', 'uiGmapgoogle-maps', 'ui.bootstrap','restModule']);
+﻿var app = angular.module('mainApp', ['ngRoute', 'ngResource', 'ui.grid', 'crumble', 'uiGmapgoogle-maps', 'ui.bootstrap', 'highcharts-ng', 'restModule']);
 
 app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -16,6 +16,11 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
             templateUrl: 'resources/templates/Platform.html',
             controller: 'PlatformController',
             label: 'Platform',
+      })
+      .when('/turism/:regionId', {
+          templateUrl: 'resources/templates/TurismRegion.html',
+          controller: 'TurismRegionController',
+          label: 'Region'
       })
       .otherwise({
           redirectTo: '/'
