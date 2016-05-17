@@ -2,7 +2,7 @@
 
 restModule.config(function (RestangularProvider) {
     RestangularProvider.setBaseUrl(
-        'http://192.168.209.135:8082/platform-server/api');
+        'http://192.168.209.139:8082/platform-server/api');
 });
 
 restModule.factory('Region', function (Restangular) {

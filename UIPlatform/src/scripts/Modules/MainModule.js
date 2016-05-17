@@ -1,4 +1,4 @@
-﻿var app = angular.module('mainApp', ['ngRoute', 'ngResource', 'ui.grid', 'crumble', 'uiGmapgoogle-maps', 'ui.bootstrap', 'highcharts-ng', 'restModule']);
+﻿var app = angular.module('mainApp', ['ngRoute', 'ngResource', 'ui.grid', 'ui.grid.pagination', 'ui.grid.expandable', 'crumble', 'uiGmapgoogle-maps', 'ui.bootstrap', 'highcharts-ng', 'restModule']);
 
 app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
