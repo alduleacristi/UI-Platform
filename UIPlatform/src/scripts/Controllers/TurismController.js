@@ -1,4 +1,4 @@
-﻿app.controller("TurismController", function ($scope, Region, uiGridConstants) {
+﻿app.controller("TurismController", function ($scope,$uibModal, Region, uiGridConstants) {
     var buildMap = function (minLat, maxLat, minLon, maxLon) {
         var map = {
             center: {
@@ -30,6 +30,7 @@
         data: $scope.regions,
         paginationPageSizes: [10, 15, 20],
         paginationPageSize: 10,
+        rowHeight:45,
         columnDefs: [{
             name: 'name', displayName: 'Name', width: '20%'
         }, {
@@ -48,16 +49,27 @@
         }, {
             name: 'minLon',
             displayName: 'Min lon',
-        }],
+        }, {
+            name: 'map',
+            displayName: 'Map',
+            cellTemplate: '<div class="ui-grid-cell-contents"><button type="button" class="btn btn-primary" ng-click="grid.appScope.openMap(row.entity)">Open</button></div>'
+        }]/*,
         enableRowSelection: true,
         expandableRowTemplate: 'resources/templates/UiGridMap.html',
-        expandableRowHeight: 500,
+        expandableRowHeight: 500,*/
 };
 
-$scope.grid.onRegisterApi = function(gridApi) {
-    // dynamic expandable rows
-    gridApi.expandable.on.rowExpandedBeforeStateChanged($scope, function(row) {
-        $scope.gridOptions.expandableRowHeight = 30 + row.entity.valueArray.length *130;
+$scope.openMap = function (region) {
+    console.log("Open map was called: ",region);
+
+    var modalInstance = $uibModal.open({
+        animation: $scope.animationsEnabled,
+        templateUrl: 'resources/templates/UiGridMap.html',
+        controller: 'ModalMapController',
+        size: 'lg',
+        resolve: {
+            region: region
+        }
     });
 };
 
