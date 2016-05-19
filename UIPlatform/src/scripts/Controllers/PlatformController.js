@@ -10,6 +10,7 @@
                 console.info("Click pressed...")
                 var e = originalEventArgs[0];
                 var lat = e.latLng.lat(), lon = e.latLng.lng();
+                console.log(lat)
                 var marker = {
                     id: Date.now(),
                     coords: {
