@@ -22,17 +22,7 @@
 
     <div class="row">
         <div class="col-lg-2">
-            <uib-accordion close-others="oneAtATime">
-                <uib-accordion-group heading="Platform status" template-url="group-template.html">
-                    Hello
-                </uib-accordion-group>
-                <uib-accordion-group heading="Content administration" template-url="group-template.html">
-                    Hello
-                </uib-accordion-group>
-                <uib-accordion-group heading="Jobs" template-url="group-template.html">
-                    Hello
-                </uib-accordion-group>
-             </uib-accordion>
+            <div ng-include="'/resources/templates/PlatformMenu.html'"></div>
         </div>
         <div class="col-lg-6">
             <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds" events="map.events">
@@ -62,6 +52,7 @@
                     <button type="button" class="btn btn-primary" ng-click="saveRegion()">
                         Save
                     </button>
+                    <span us-spinner spinner-key="spinner-1"></span>
                 </uib-accordion-group>
             </uib-accordion>
 </div>

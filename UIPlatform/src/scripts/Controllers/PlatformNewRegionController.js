@@ -1,4 +1,4 @@
-﻿app.controller("PlatformController", function ($scope, $rootScope, Region) {
+﻿app.controller("PlatformNewRegionController", function ($scope, $rootScope, Region, IngestRegion, usSpinnerService) {
     $scope.map = {
         center: {
             latitude: 45.65288, longitude: 25.61184
@@ -58,28 +58,58 @@
     $scope.alerts = [];
 
     $scope.saveRegion = function () {
-        console.info("Save region was called...");
-
         if ($scope.region.name == "") {
-            /*if ($scope.alerts.filter(function(e){ return e.id == "NameIsEmpty"})){
-               $scope.alerts.push(nmeIsEmptyAlert);
-            }*/
             $scope.alerts.push(nmeIsEmptyAlert);
             return;
         };
 
-        console.info("Before post...")
-        /*Region.post("region", $scope.region).then(function (result) {
-            $scope.grid.data = result.plain()
-            //$scope.$apply();
-            console.info($scope.regions)
-        });*/
         $scope.region.id = null;
-        console.info("Region: ", $scope.region);
-        Region.post($scope.region).then(function (result) {
-            //$scope.grid.data = result.plain()
-            //$scope.$apply();
-            console.info(result.plain())
+
+        var getParams = function (points) {
+            var params = { regionName: "", year: new Date().getFullYear() };
+            var minLat = 999999999, minLon = 999999999;
+            var maxLat = -999999999, maxLon = -999999999;
+            for (var i = 0; i < points.length; i++) {
+                if (points[i].latitude < minLat) {
+                    minLat = points[i].latitude;
+                }
+                if (points[i].latitude > maxLat) {
+                    maxLat = points[i].latitude;
+                }
+                if (points[i].longitude < minLon) {
+                    minLon = points[i].longitude;
+                }
+                if (points[i].longitude > maxLon) {
+                    maxLon = points[i].longitude;
+                }
+            }
+
+            params.minLon = minLon;
+            params.maxLon = maxLon;
+            params.minLat = minLat;
+            params.maxLat = maxLat;
+
+            return params;
+        }
+
+        $scope.startSpin();
+
+        var params = getParams($scope.region.coords.points);
+        params.regionName = $scope.region.name;
+
+        IngestRegion.post({}, params).then(function (result) {
+            $scope.stopSpin();
+            var successAlert = {
+                type: 'info', msg: "Data about this new region was ingested with success.", id: "Success"
+            };
+            $scope.alerts.push(successAlert);
+        }, function (response) {
+            console.info("### Response: ", response);
+            var failedAlert = {
+                type: 'danger', msg: "Data about this new region was not ingested with success. "+response.statusText, id: "Failed"
+            };
+            $scope.stopSpin();
+            $scope.alerts.push(failedAlert);
         });
     };
 
@@ -90,4 +120,11 @@
     var nmeIsEmptyAlert = {
         type: 'danger', msg: "You must give a name to the region.", id:"NameIsEmpty"
     };
+
+    $scope.startSpin = function () {
+        usSpinnerService.spin('spinner-1');
+    }
+    $scope.stopSpin = function () {
+        usSpinnerService.stop('spinner-1');
+    }
 });

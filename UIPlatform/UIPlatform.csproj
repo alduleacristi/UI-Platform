@@ -92,6 +92,8 @@
     <Content Include="Scripts\angular-sanitize.js" />
     <Content Include="Scripts\angular-sanitize.min.js" />
     <Content Include="Scripts\angular-scenario.js" />
+    <Content Include="Scripts\angular-spinner.js" />
+    <Content Include="Scripts\angular-spinner.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\highcharts\adapters\mootools-adapter.js" />
     <Content Include="Scripts\highcharts\adapters\mootools-adapter.src.js" />
@@ -417,6 +419,8 @@
     <Content Include="Scripts\lodash.min.js" />
     <Content Include="Scripts\restangular.js" />
     <Content Include="Scripts\restangular.min.js" />
+    <Content Include="Scripts\spin.js" />
+    <Content Include="Scripts\spin.min.js" />
     <Content Include="Scripts\ui-grid.js" />
     <Content Include="Scripts\ui-grid.min.js" />
     <Content Include="Scripts\underscore.js" />
@@ -424,13 +428,14 @@
     <Content Include="src\resources\img\big-data.jpg" />
     <Content Include="src\resources\templates\Home.html" />
     <Content Include="src\resources\templates\UiGridMap.html" />
-    <Content Include="src\resources\templates\Platform.html" />
+    <Content Include="src\resources\templates\PlatformNewRegion.html" />
     <Content Include="src\resources\templates\PlatformMenu.html" />
     <Content Include="src\resources\templates\Turism.html" />
     <Content Include="src\resources\templates\TurismRegion.html" />
     <Content Include="src\scripts\Controllers\HomeController.js" />
     <Content Include="src\scripts\Controllers\ModalMapController.js" />
-    <Content Include="src\scripts\Controllers\PlatformController.js" />
+    <Content Include="src\scripts\Controllers\PlatformNewRegionController.js" />
+    <Content Include="src\scripts\Controllers\PlatformStatusController.js" />
     <Content Include="src\scripts\Controllers\TurismRegionController.js" />
     <Content Include="src\scripts\Controllers\TurismController.js" />
     <Content Include="src\scripts\lib\angular-animate.min.js" />
@@ -438,6 +443,7 @@
     <Content Include="src\scripts\lib\angular-highcharts.js" />
     <Content Include="src\scripts\lib\angular-resource.min.js" />
     <Content Include="src\scripts\lib\angular-simple-logger.min.js" />
+    <Content Include="src\scripts\lib\angular-spinner.min.js" />
     <Content Include="src\scripts\lib\angular.min.js.map" />
     <Content Include="Scripts\jquery-2.2.1.min.map" />
     <Content Include="src\scripts\lib\crumble.js" />
@@ -448,6 +454,7 @@
     <Content Include="Content\ui-grid.eot" />
     <Content Include="src\scripts\lib\lodash.min.js" />
     <Content Include="src\scripts\lib\restangular.min.js" />
+    <Content Include="src\scripts\lib\spin.min.js" />
     <Content Include="src\scripts\lib\ui-bootstrap-tpls.min.js" />
     <Content Include="src\scripts\lib\underscore.min.js" />
     <Content Include="src\scripts\Modules\RestModule.js" />
@@ -459,6 +466,8 @@
     <Content Include="Scripts\underscore.min.map" />
     <Content Include="src\scripts\lib\underscore.min.map" />
     <Content Include="src\style\lib\ui-grid.woff" />
+    <Content Include="Scripts\angular-spinner.min.js.map" />
+    <Content Include="src\resources\templates\PlatformStatus.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

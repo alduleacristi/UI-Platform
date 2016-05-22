@@ -8,3 +8,7 @@ restModule.config(function (RestangularProvider) {
 restModule.factory('Region', function (Restangular) {
     return Restangular.service('region');
 });
+
+restModule.factory('IngestRegion', function (Restangular) {
+    return Restangular.service('ingest/region');
+});
