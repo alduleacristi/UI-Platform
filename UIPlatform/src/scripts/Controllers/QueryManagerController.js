@@ -1,10 +1,10 @@
-﻿app.controller("TurismController", function ($scope, $uibModal, $location, Region, uiGridConstants) {
+﻿app.controller("QueryManagerController", function ($scope, $uibModal, $location, Region, uiGridConstants) {
     var buildMap = function (minLat, maxLat, minLon, maxLon) {
         var map = {
             center: {
-                latitude: (maxLat+minLat) / 2 , longitude: (minLon+maxLon)/2
+                latitude: (maxLat + minLat) / 2, longitude: (minLon + maxLon) / 2
             },
-            zoom: 5,
+            zoom: 10,
             bounds: {},
         }
 
@@ -82,7 +82,7 @@
     };
 
     $scope.$on('$viewContentLoaded', function () {
-        
+
         Region.getList().then(function (result) {
             var resultData = result.plain();
 
@@ -94,7 +94,7 @@
             }
             $scope.grid.data = resultData;
             //$scope.$apply();
-            console.info( $scope.grid.data)
+            console.info($scope.grid.data)
         });
     });
 
@@ -103,8 +103,9 @@
         paginationPageSizes: [10, 15, 20],
         paginationPageSize: 10,
         rowHeight: 45,
+        enableFiltering: true,
         columnDefs: [{
-            name: 'name', displayName: 'Name', width: '10%'
+            name: 'name', displayName: 'Name', width: '20%'
         }, {
             name: 'startYear', displayName: 'First Year', width: '10%'
         }, {
@@ -124,30 +125,30 @@
         }, {
             name: 'map',
             displayName: 'Map',
-            cellTemplate: '<div class="ui-grid-cell-contents"><button type="button" class="btn btn-primary" ng-click="grid.appScope.openMap(row.entity)">Open</button></div>'
+            cellTemplate: '<div class="ui-grid-cell-contents"><button type="button" class="btn btn-primary" ng-click="grid.appScope.openMap(row.entity)">Open map</button></div>',
+            enableFiltering: false
         }, {
             name: 'id',
-            displayName: 'Statistics',
-            cellTemplate: '<div class="ui-grid-cell-contents"><button type="button" class="btn btn-primary" ng-click="grid.appScope.openStatistics(row.entity)">View</button></div>'
+            displayName: 'Query manager',
+            cellTemplate: '<div class="ui-grid-cell-contents"><button type="button" class="btn btn-primary" ng-click="grid.appScope.openQueryManager(row.entity)">View</button></div>',
+            enableFiltering: false
         }]
-};
+    };
 
-$scope.openMap = function (region) {
-    console.log("Open map was called: ",region);
+    $scope.openMap = function (region) {
+        var modalInstance = $uibModal.open({
+            animation: $scope.animationsEnabled,
+            templateUrl: 'resources/templates/UiGridMap.html',
+            controller: 'ModalMapController',
+            size: 'lg',
+            resolve: {
+                region: region
+            }
+        });
+    };
 
-    var modalInstance = $uibModal.open({
-        animation: $scope.animationsEnabled,
-        templateUrl: 'resources/templates/UiGridMap.html',
-        controller: 'ModalMapController',
-        size: 'lg',
-        resolve: {
-            region: region
-        }
-    });
-};
-
-$scope.openStatistics = function (region) {
-    console.log(region.id)
-    $location.path('/turism/'+region.id)
-}
+    $scope.openQueryManager = function (region) {
+        console.log(region.idRegion)
+        $location.path('/platform/queryManager/' + region.idRegion)
+    }
 });

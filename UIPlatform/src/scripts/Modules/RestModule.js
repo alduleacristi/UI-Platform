@@ -12,3 +12,10 @@ restModule.factory('Region', function (Restangular) {
 restModule.factory('IngestRegion', function (Restangular) {
     return Restangular.service('ingest/region');
 });
+
+restModule.factory('Query', function (Restangular) {
+    return Restangular.service('hive/query');
+});
+restModule.factory('UsedQuery', function (Restangular) {
+    return Restangular.service('hive/usedQuery');
+});

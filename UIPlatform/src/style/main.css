@@ -24,3 +24,22 @@
 .angular-google-map-container { 
     height: 450px; 
 }
+
+.notRunningImg {
+    background-image: url(../resources/img/notRunning.jpg);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 20px;
+}
+
+.runningImg {
+    background-image: url(../resources/img/running.jpg);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 20px;
+}
+

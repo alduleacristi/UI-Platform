@@ -58,6 +58,7 @@
     $scope.alerts = [];
 
     $scope.saveRegion = function () {
+        $scope.alerts = [];
         if ($scope.region.name == "") {
             $scope.alerts.push(nmeIsEmptyAlert);
             return;
@@ -66,7 +67,7 @@
         $scope.region.id = null;
 
         var getParams = function (points) {
-            var params = { regionName: "", year: new Date().getFullYear() };
+            var params = { regionName: "", year: new Date().getFullYear(), dbName: "turism" };
             var minLat = 999999999, minLon = 999999999;
             var maxLat = -999999999, maxLon = -999999999;
             for (var i = 0; i < points.length; i++) {
@@ -96,6 +97,14 @@
 
         var params = getParams($scope.region.coords.points);
         params.regionName = $scope.region.name;
+        if ($scope.region.coords.points.length < 3) {
+            var notEnoughpointsAlert = {
+                type: 'danger', msg: "You must have at least 3 points selected.", id: "NotEnoughPoints"
+            };
+            $scope.alerts.push(notEnoughpointsAlert);
+            $scope.stopSpin();
+            return;
+        };
 
         IngestRegion.post({}, params).then(function (result) {
             $scope.stopSpin();
@@ -104,9 +113,12 @@
             };
             $scope.alerts.push(successAlert);
         }, function (response) {
-            console.info("### Response: ", response);
+            var msg = "Failed to ingest data. ";
+            if (response.data != null && response.data != undefined) {
+                msg = msg + response.data;
+            }
             var failedAlert = {
-                type: 'danger', msg: "Data about this new region was not ingested with success. "+response.statusText, id: "Failed"
+                type: 'danger', msg: msg, id: "Failed"
             };
             $scope.stopSpin();
             $scope.alerts.push(failedAlert);

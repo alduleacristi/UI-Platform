@@ -1,4 +1,4 @@
-﻿var app = angular.module('mainApp', ['ngRoute', 'ngResource', 'ui.grid', 'ui.grid.pagination', 'crumble', 'uiGmapgoogle-maps', 'ui.bootstrap', 'highcharts-ng', 'restModule', 'angularSpinner']);
+﻿var app = angular.module('mainApp', ['ngRoute', 'ngResource', 'ui.grid', 'ui.grid.pagination', 'crumble', 'uiGmapgoogle-maps', 'ui.bootstrap', 'highcharts-ng', 'restModule', 'angularSpinner', 'ui.grid.expandable']);
 
 app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -12,15 +12,15 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
           controller: 'TurismController',
           label: 'Turism',
       })
+      .when('/turism/:regionId', {
+             templateUrl: 'resources/templates/TurismRegion.html',
+             controller: 'TurismRegionController',
+             label: 'Region'
+       })
       .when('/platform', {
             templateUrl: 'resources/templates/PlatformStatus.html',
             controller: 'PlatformStatusController',
             label: 'Platform',
-      })
-      .when('/turism/:regionId', {
-          templateUrl: 'resources/templates/TurismRegion.html',
-          controller: 'TurismRegionController',
-          label: 'Region'
       })
       .when('/platform/status', {
             templateUrl: 'resources/templates/PlatformStatus.html',
@@ -30,8 +30,18 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
       .when('/platform/newRegion', {
           templateUrl: 'resources/templates/PlatformNewRegion.html',
           controller: 'PlatformNewRegionController',
-          label: 'Status'
+          label: 'Add new region'
       })
+      .when('/platform/queryManager', {
+             templateUrl: 'resources/templates/QueryManager.html',
+             controller: 'QueryManagerController',
+             label: 'Query manager'
+      })
+      .when('/platform/queryManager/:regionId', {
+            templateUrl: 'resources/templates/QueryManagerRegion.html',
+            controller: 'QueryManagerRegionController',
+            label: '{{region.name}}'
+        })
       .otherwise({
           redirectTo: '/'
       });

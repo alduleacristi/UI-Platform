@@ -426,7 +426,12 @@
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="src\resources\img\big-data.jpg" />
+    <Content Include="src\resources\img\notRunning.jpg" />
+    <Content Include="src\resources\img\running.jpg" />
     <Content Include="src\resources\templates\Home.html" />
+    <Content Include="src\resources\templates\QueryManagerRegion.html" />
+    <Content Include="src\resources\templates\QueryManager.html" />
+    <Content Include="src\resources\templates\spinnerTemplate.html" />
     <Content Include="src\resources\templates\UiGridMap.html" />
     <Content Include="src\resources\templates\PlatformNewRegion.html" />
     <Content Include="src\resources\templates\PlatformMenu.html" />
@@ -434,6 +439,8 @@
     <Content Include="src\resources\templates\TurismRegion.html" />
     <Content Include="src\scripts\Controllers\HomeController.js" />
     <Content Include="src\scripts\Controllers\ModalMapController.js" />
+    <Content Include="src\scripts\Controllers\QueryManagerRegionController.js" />
+    <Content Include="src\scripts\Controllers\QueryManagerController.js" />
     <Content Include="src\scripts\Controllers\PlatformNewRegionController.js" />
     <Content Include="src\scripts\Controllers\PlatformStatusController.js" />
     <Content Include="src\scripts\Controllers\TurismRegionController.js" />
@@ -507,6 +514,7 @@
     <Content Include="src\style\custom.css" />
     <Content Include="src\style\flexslider.css" />
     <Content Include="src\style\main.css" />
+    <Content Include="src\style\spinner.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
