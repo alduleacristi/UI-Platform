@@ -31,15 +31,11 @@
     height: 20px;
     background-repeat: no-repeat;
     background-size: contain;
-    margin-left: 20px;
+    margin-left: 35px;
+}
+.btn-primary{
+    height: 23px;
+    padding: 1px 12px;
 }
 
-.runningImg {
-    background-image: url(../resources/img/running.jpg);
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-left: 20px;
-}
 

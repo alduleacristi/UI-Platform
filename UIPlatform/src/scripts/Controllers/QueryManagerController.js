@@ -102,26 +102,31 @@
         data: $scope.regions,
         paginationPageSizes: [10, 15, 20],
         paginationPageSize: 10,
-        rowHeight: 45,
         enableFiltering: true,
         columnDefs: [{
             name: 'name', displayName: 'Name', width: '20%'
         }, {
-            name: 'startYear', displayName: 'First Year', width: '10%'
+            name: 'startYear', displayName: 'First Year', width: '10%',
+            enableFiltering: false
         }, {
-            name: 'endYear', displayName: 'Last Year', width: '10%'
+            name: 'endYear', displayName: 'Last Year', width: '10%',
+            enableFiltering: false
         }, {
             name: 'maxLat',
             displayName: 'Max lat',
+            enableFiltering: false
         }, {
             name: 'minLat',
             displayName: 'Min lat',
+            enableFiltering: false
         }, {
             name: 'maxLon',
             displayName: 'Max lon',
+            enableFiltering: false
         }, {
             name: 'minLon',
             displayName: 'Min lon',
+            enableFiltering: false
         }, {
             name: 'map',
             displayName: 'Map',

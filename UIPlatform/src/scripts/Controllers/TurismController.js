@@ -102,7 +102,7 @@
         data: $scope.regions,
         paginationPageSizes: [10, 15, 20],
         paginationPageSize: 10,
-        rowHeight: 45,
+
         columnDefs: [{
             name: 'name', displayName: 'Name', width: '10%'
         }, {
