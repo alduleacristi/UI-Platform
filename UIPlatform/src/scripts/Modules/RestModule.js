@@ -19,3 +19,6 @@ restModule.factory('Query', function (Restangular) {
 restModule.factory('UsedQuery', function (Restangular) {
     return Restangular.service('hive/usedQuery');
 });
+restModule.factory('PrecipitationQuery', function (Restangular) {
+    return Restangular.service('db/precipitations/month/avg');
+});

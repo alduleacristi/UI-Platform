@@ -1,4 +1,4 @@
-﻿var app = angular.module('mainApp', ['ngRoute', 'ngResource', 'ui.grid', 'ui.grid.pagination', 'crumble', 'uiGmapgoogle-maps', 'ui.bootstrap', 'highcharts-ng', 'restModule', 'angularSpinner', 'ui.grid.expandable']);
+﻿var app = angular.module('mainApp', ['ngRoute', 'ngResource', 'ui.grid', 'ui.grid.pagination', 'crumble', 'uiGmapgoogle-maps', 'ui.bootstrap', 'highcharts-ng', 'restModule', 'angularSpinner', 'ui.grid.expandable', 'restangular']);
 
 app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -54,3 +54,5 @@ app.run(function ($rootScope, crumble) {
         $rootScope.crumble = crumble
     });
 })
+
+var DATABASE_NAME = "turism";

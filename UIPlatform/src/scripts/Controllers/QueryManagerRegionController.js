@@ -1,4 +1,4 @@
-﻿app.controller("QueryManagerRegionController", function ($scope,$routeParams, Region,Query,UsedQuery, crumble) {
+﻿app.controller("QueryManagerRegionController", function ($scope,$routeParams, Region,Query,UsedQuery, crumble, Restangular) {
     var params = { regionId: $routeParams.regionId}
     Region.getList(params).then(function (result) {
         var array = result.plain();
@@ -31,19 +31,22 @@
         }, {
             name: 'running', width: '110',
             displayName: 'Running',
-            cellTemplate: '/resources/templates/spinnerTemplate.html'
+            cellTemplate: '/resources/templates/SpinnerTemplate.html'
         }, {
             name: 'idQuery',
             displayName: 'Run',
-            cellTemplate: '<div class="ui-grid-cell-contents"><button type="button" class="btn btn-primary" ng-click="grid.appScope.startQuery(row.entity)">Start query</button></div>'
+            cellTemplate: '<div class="ui-grid-cell-contents"><button type="button" class="btn btn-primary" ng-click="grid.appScope.startQuery(row.entity)" ng-disabled="row.entity.running">Start query</button></div>'
         }]
     }
 
     $scope.startQuery = function (query) {
-        console.log("Start query was called: ", query);
-
         query.running = true;
-        //query.timeDuration = 100;
+        var url = query.query.path + "?dbName=" + DATABASE_NAME + "&regionId=" + $scope.region.idRegion + "&eachYear=true";
+        Restangular.one(url).getList().then(function (result) {
+            console.log("Result: ", result);
+        }, function (result) {
+            console.error("Failed to get data about region.", result);
+        });
     };
 
     $scope.$on('$viewContentLoaded', function () {

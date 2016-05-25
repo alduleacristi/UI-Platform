@@ -431,7 +431,7 @@
     <Content Include="src\resources\templates\Home.html" />
     <Content Include="src\resources\templates\QueryManagerRegion.html" />
     <Content Include="src\resources\templates\QueryManager.html" />
-    <Content Include="src\resources\templates\spinnerTemplate.html" />
+    <Content Include="src\resources\templates\SpinnerTemplate.html" />
     <Content Include="src\resources\templates\UiGridMap.html" />
     <Content Include="src\resources\templates\PlatformNewRegion.html" />
     <Content Include="src\resources\templates\PlatformMenu.html" />
