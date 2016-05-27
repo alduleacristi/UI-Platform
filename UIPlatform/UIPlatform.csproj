@@ -425,10 +425,12 @@
     <Content Include="Scripts\ui-grid.min.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
+    <Content Include="src\resources\img\adminZone.jpg" />
     <Content Include="src\resources\img\big-data.jpg" />
     <Content Include="src\resources\img\notRunning.jpg" />
     <Content Include="src\resources\img\running.jpg" />
     <Content Include="src\resources\templates\Home.html" />
+    <Content Include="src\resources\templates\Platform.html" />
     <Content Include="src\resources\templates\QueryManagerRegion.html" />
     <Content Include="src\resources\templates\QueryManager.html" />
     <Content Include="src\resources\templates\SpinnerTemplate.html" />

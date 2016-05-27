@@ -18,7 +18,7 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
              label: 'Region'
        })
       .when('/platform', {
-            templateUrl: 'resources/templates/PlatformStatus.html',
+            templateUrl: 'resources/templates/Platform.html',
             controller: 'PlatformStatusController',
             label: 'Platform',
       })
