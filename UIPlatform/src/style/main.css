@@ -38,4 +38,14 @@
     padding: 1px 12px;
 }
 
-
+.status-list{
+    style="border: solid 1pt #eee;"
+}
+.status-list-row{
+    border-bottom: solid 1pt #eee;
+    padding: 15px;
+}
+.status-list-img{
+    width: 15px;
+    margin-left: 15px;
+}

@@ -3,6 +3,10 @@
 restModule.config(function (RestangularProvider) {
     RestangularProvider.setBaseUrl(
         'http://192.168.209.139:8082/platform-server/api');
+
+    RestangularProvider.setDefaultHttpFields({
+        withCredentials: true
+    });
 });
 
 restModule.factory('Region', function (Restangular) {
@@ -26,9 +30,10 @@ restModule.factory('PrecipitationQuery', function (Restangular) {
 restModule.factory('Cluster', function (Restangular) {
     return Restangular.all('cluster');
 });
-restModule.factory('ClusterMetrics', function (Restangular) {
-    return Restangular.service('cluster/metrics');
+
+restModule.factory('Auth', function (Restangular) {
+    return Restangular.all('auth');
 });
-restModule.factory('ClusterNodes', function (Restangular) {
-    return Restangular.service('cluster/nodes');
+restModule.factory('Authentication', function (Restangular) {
+    return Restangular.service('auth/authentication');
 });

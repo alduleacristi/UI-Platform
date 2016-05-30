@@ -27,6 +27,7 @@
     <script src="scripts/lib/angular-highcharts.js"></script>
     <script src="scripts/lib/spin.min.js"></script>
     <script src="scripts/lib/angular-spinner.min.js"></script>
+    <script src="scripts/lib/ui-listView.min.js"></script>
 
     <script src="scripts/modules/MainModule.js"></script>
     <script src="scripts/modules/RestModule.js"></script>
@@ -38,6 +39,7 @@
     <script src="scripts/Controllers/PlatformStatusController.js"></script>
     <script src="scripts/Controllers/QueryManagerController.js"></script>
     <script src="scripts/Controllers/QueryManagerRegionController.js"></script>
+    <script src="scripts/Controllers/SecurityController.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="style/bootstrap.min.css" rel="stylesheet">
@@ -48,6 +50,7 @@
     <link href="style/flexslider.css" rel="stylesheet">
     <link href="style/main.css" rel="stylesheet">
     <link href="style/spinner.css" rel="stylesheet" />
+    <link href="style/lib/ui-listView.css" rel="stylesheet" />
 
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
@@ -60,13 +63,13 @@
     <![endif]-->
 </head>
 
-<body ng-app="mainApp">
+<body ng-app="mainApp" ng-controller="MainController">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>s
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
@@ -82,9 +85,15 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#/">Home</a></li>
                     <li><a href="#/turism">Turism</a></li>
+                    <li><a href="#/predictions">Prediction</a></li>
                     <li><a href="#/platform">Platform</a></li>
-                    <li><a href="#testimonialsWrap">Testimonials</a></li>
-                    <li><a href="#contactWrap">Contact Us</a></li>
+                    <li>
+                        <a href="#/login" ng-show="!authenticated">Login</a>                
+                    </li>
+                    <li> 
+                        <a href="#/home" ng-show="authenticated" ng-click="logout()">Logout</a>     
+                    </li>
+                    <li ng-show="authenticated"><span style="color: red; font-style: italic; font-weight: bold;">Hi, {{user.email}}</span></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
